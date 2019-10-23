@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hairdb</name>
+    </assembly>
+    <members>
+        <member name="F:Hairdb.Areas.API.Controllers.CalendarController._calendarRepository">
+            <summary>
+            Calendar Repository
+            </summary>
+        </member>
+        <member name="M:Hairdb.Areas.API.Controllers.CalendarController.#ctor(Hairdb.DAL.Repository.ICalendarRepository,Hairdb.DAL.Repository.UserRepository)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="calendarRepository"></param>
+        </member>
+        <member name="M:Hairdb.Areas.API.Controllers.CalendarController.Create(Hairdb.Areas.API.Model.CreateCalendarInputModel)">
+            <summary>
+            Add Event
+            </summary>
+            <param name="inputModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hairdb.Areas.API.Controllers.CalendarController.Remove(Hairdb.Areas.API.Model.RemoveCalendarInputModel)">
+            <summary>
+            Remove Event
+            </summary>
+            <param name="inputModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hairdb.Areas.API.Controllers.CalendarController.FindCalendar(System.String,System.String)">
+            <summary>
+            Find event
+            </summary>
+            <param name="mode">ALL,DAY,FROM</param>
+            <param name="date">ddMMyyyyhhmm</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hairdb.Areas.API.Controllers.ClientController.Create(System.String,System.String)">
+            <summary>
+            Add client
+            </summary>
+            <param name="name"></param>
+            <param name="phone"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hairdb.Areas.API.Controllers.ClientController.Remove(System.Int32)">
+            <summary>
+            Remove client
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hairdb.Areas.API.Controllers.ClientController.GetAll">
+            <summary>
+            Get All Client
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hairdb.Areas.API.Controllers.IndexController.Token(Hairdb.Areas.API.Model.LoginInputModel)">
+            <summary>
+            Get Token
+            </summary>
+            <param name="model">Input Form</param>
+            <returns></returns>
+            <response code="401" >Invalid username or password</response>
+        </member>
+        <member name="M:Hairdb.Areas.API.Controllers.IndexController.GetIdentity(System.String,System.String)">
+            <summary>
+            Проверка авторизации
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hairdb.Areas.API.Controllers.ServiceController.Create(System.String,System.String)">
+            <summary>
+            Add service
+            </summary>
+            <param name="name"></param>
+            <param name="phone"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hairdb.Areas.API.Controllers.ServiceController.Remove(System.Int32)">
+            <summary>
+            Remove service
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hairdb.Areas.API.Controllers.ServiceController.GetAll">
+            <summary>
+            Get All Service
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Hairdb.Areas.API.Controllers.UserController">
+            <summary>
+            User Controller
+            </summary>
+        </member>
+        <member name="M:Hairdb.Areas.API.Controllers.UserController.Create(Hairdb.Areas.API.Model.CreateUserInputModel)">
+            <summary>
+            Create User
+            </summary>
+            <param name="inputModel"></param>
+            <response code="401" >Invalid token</response>
+            <returns></returns>
+        </member>
+        <member name="M:Hairdb.Areas.API.Controllers.UserController.Remove(Hairdb.Areas.API.Model.RemoveUserInputModel)">
+            <summary>
+            Remove User
+            </summary>
+            <param name="inputModel"></param>
+            <response code="401" >Invalid token</response>
+            <returns></returns>
+        </member>
+        <member name="M:Hairdb.Areas.API.Controllers.UserController.GetClient">
+            <summary>
+            List client
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hairdb.Areas.API.Controllers.UserController.GetProfile">
+            <summary>
+            Get Profile
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Hairdb.Areas.API.Model.CreateUserInputModel">
+            <summary>
+            Create User
+            </summary>
+        </member>
+        <member name="M:Hairdb.DAL.Repository.CalendarRepository.FindCalendar(System.Int32,System.String,System.String)">
+            <summary>
+            Поиск по ид юзера и дате
+            </summary>
+            <param name="userId"></param>
+            <param name="mode"></param>
+            <param name="startDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hairdb.DAL.Repository.ClientRepository.Create(System.String,System.String)">
+            <summary>
+            Create Client
+            </summary>
+            <param name="name"></param>
+            <param name="phone"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Hairdb.DAL.Repository.UserRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Hairdb.DAL.Repository.UserRepository.#ctor(Hairdb.DAL.ApplicationDbContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Hairdb.DAL.Repository.UserRepository.Login(System.String,System.String)">
+            <summary>
+            Login function
+            </summary>
+            <param name="login"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hairdb.DAL.Repository.UserRepository.Remove(Hairdb.Areas.API.Model.RemoveUserInputModel)">
+            <summary>
+             Remove User
+            </summary>
+            <param name="inputModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hairdb.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            ConfigureServices
+            </summary>
+            <param name="services"></param>
+        </member>
+    </members>
+</doc>
